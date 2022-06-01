@@ -1,0 +1,29 @@
+<h2>Componente de mostrar</h2>
+
+<div class="d-grip gap-2 mt-4">
+  <a routerLink="/agregar" class="btn btn-primary" type="button"
+    >Agregar registro</a
+  >
+</div>
+<table class="table table-hover table-striped">
+  <thead class="bg-dark text-white">
+    <tr>
+      <th>Titulo</th>
+      <th>Contenido</th>
+      <th>Autor</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of Registros">
+      <td>{{item.titulo}}</td>
+      <td>{{item.contenido}}</td>
+      <td>{{item.Autor}}</td>
+      <td>
+        <button routerLink="/editar/{{item.id}}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+        <button (click)="borrar(item)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
